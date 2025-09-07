@@ -11,13 +11,13 @@ getHumanChoice() gets 0-2 via prompt()
 1: paper
 2: scissors
 
-playRound() compares choice, returns 0, 1 or 2
+playRound() compares choice, prints win/lose/draw message, returns 0, 1 or 2
 
 0: draw
 1: computer wins
 2: human wins
 
-printWinMessage() takes playRound() int and prints a win (or draw) message
+translateChoice() translates choice int to string
 
 playGame() keeps track of scores, calls playRound 5 times, declares winner
 
@@ -35,23 +35,30 @@ function getHumanChoice() {
 
 function playRound(computerChoice, humanChoice) {
   if (computerChoice === humanChoice) {
+    console.log(`Draw! You both chose ${translateChoice(computerChoice)}`);
     return 0; // draw
   } else if (computerChoice === 0) { // rock
     if (humanChoice === 1) { // paper
+      console.log("You win! Paper beats rock")
       return 2; // human wins
-    } else {
+    } else { // scissors
+      console.log("You lose. Rock beats scissors")
       return 1; // computer wins
     }
   } else if (computerChoice === 1) { // paper
     if (humanChoice === 2) { // scissors
+      console.log("You win! Scissors beat paper")
       return 2; // human wins
-    } else {
+    } else { // rock
+      console.log("You lose. Paper beats rock")
       return 1; // computer wins
     }
   } else if (computerChoice === 2) { // scissors
     if (humanChoice === 0) { // rock
+      console.log("You win! Rock beats scissors")
       return 2; // human wins
-    } else {
+    } else { // paper
+      console.log("You lose. Scissors beat paper")
       return 1; // computer wins
     }
   }
