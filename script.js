@@ -11,11 +11,13 @@ getHumanChoice() gets 0-2 via prompt()
 1: paper
 2: scissors
 
-playRound() compares choice, prints win string, returns 0, 1 or 2
+playRound() compares choice, returns 0, 1 or 2
 
 0: draw
 1: computer wins
 2: human wins
+
+printWinMessage() takes playRound() int and prints a win (or draw) message
 
 playGame() keeps track of scores, calls playRound 5 times, declares winner
 
