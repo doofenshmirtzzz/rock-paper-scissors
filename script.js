@@ -35,7 +35,7 @@ function getHumanChoice() {
 
 function playRound(computerChoice, humanChoice) {
   if (computerChoice === humanChoice) {
-    console.log(`Draw! You both chose ${translateChoice(computerChoice)}`);
+    console.log(`Tie! You both chose ${translateChoice(computerChoice)}`);
     return 0; // draw
   } else if (computerChoice === 0) { // rock
     if (humanChoice === 1) { // paper
@@ -73,4 +73,26 @@ function translateChoice(choice) {
     case 2:
       return "scissors";
   }
+}
+
+function playGame() {
+  let computerScore = 0;
+  let humanScore = 0;
+  let result;
+
+  while (computerScore !== 3 || humanScore !== 3) {
+    result = playRound(getComputerChoice(), getHumanChoice());
+    switch (result) {
+      case 0: // tie
+        break;
+      case 1: // computer wins
+        computerScore++;
+        break;
+      case 2: // human wins
+        humanScore++;
+        break
+    }
+  }
+
+  console.log((computerScore > humanScore) ? "You lost the game. Try again next time" : "You won the game! Good job");
 }
