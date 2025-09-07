@@ -81,18 +81,19 @@ function playGame() {
   let result;
 
   while (computerScore < 3 && humanScore < 3) {
-    console.log(`The scores are:\n Computer: ${computerScore}\n Human: ${humanScore}`);
     result = playRound(getComputerChoice(), getHumanChoice());
     switch (result) {
       case 0: // tie
-        break;
+      break;
       case 1: // computer wins
-        computerScore++;
-        break;
+      computerScore++;
+      break;
       case 2: // human wins
-        humanScore++;
-        break
+      humanScore++;
+      break
     }
+    
+    console.log(`The scores are:\n Computer: ${computerScore}\n Human: ${humanScore}`);
   }
 
   console.log((computerScore > humanScore) ? "You lost the game. Try again next time" : "You won the game! Good job");
