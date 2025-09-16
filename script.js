@@ -80,23 +80,23 @@ function playGame() {
   let humanScore = 0;
   let result;
 
-  while (computerScore < 3 && humanScore < 3) {
-    result = playRound(getComputerChoice(), getHumanChoice());
-    switch (result) {
-      case 0: // tie
-      break;
-      case 1: // computer wins
-      computerScore++;
-      break;
-      case 2: // human wins
-      humanScore++;
-      break
-    }
+  // while (computerScore < 3 && humanScore < 3) {
+  //   result = playRound(getComputerChoice(), getHumanChoice());
+  //   switch (result) {
+  //     case 0: // tie
+  //     break;
+  //     case 1: // computer wins
+  //     computerScore++;
+  //     break;
+  //     case 2: // human wins
+  //     humanScore++;
+  //     break
+  //   }
     
-    console.log(`The scores are:\n Computer: ${computerScore}\n Human: ${humanScore}`);
-  }
+  //   console.log(`The scores are:\n Computer: ${computerScore}\n Human: ${humanScore}`);
+  // }
 
-  console.log((computerScore > humanScore) ? "You lost the game. Try again next time" : "You won the game! Good job");
+  // console.log((computerScore > humanScore) ? "You lost the game. Try again next time" : "You won the game! Good job");
 }
 
 playGame();
