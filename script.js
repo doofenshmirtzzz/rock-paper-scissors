@@ -29,8 +29,17 @@ function getComputerChoice() {
   return Math.floor(Math.random() * 3); // 0, 1 or 2
 }
 
-function getHumanChoice() {
-  return parseInt(prompt("0: rock\n1: paper\n2: scissors\nChoose your sign: "));
+function getHumanChoice(event) {
+  switch (event.target.id) {
+    case "rock":
+      return 0
+    case "paper":
+      return 1
+    case "scissors":
+      return 2
+    default:
+      break;
+  }
 }
 
 function playRound(computerChoice, humanChoice) {
@@ -80,23 +89,30 @@ function playGame() {
   let humanScore = 0;
   let result;
 
-  // while (computerScore < 3 && humanScore < 3) {
-  //   result = playRound(getComputerChoice(), getHumanChoice());
-  //   switch (result) {
-  //     case 0: // tie
-  //     break;
-  //     case 1: // computer wins
-  //     computerScore++;
-  //     break;
-  //     case 2: // human wins
-  //     humanScore++;
-  //     break
-  //   }
+  while (computerScore < 3 && humanScore < 3) {
+    result = playRound(getComputerChoice(), getHumanChoice());
+    switch (result) {
+      case 0: // tie
+      break;
+      case 1: // computer wins
+      computerScore++;
+      break;
+      case 2: // human wins
+      humanScore++;
+      break
+    }
     
-  //   console.log(`The scores are:\n Computer: ${computerScore}\n Human: ${humanScore}`);
-  // }
+    console.log(`The scores are:\n Computer: ${computerScore}\n Human: ${humanScore}`);
+  }
 
   // console.log((computerScore > humanScore) ? "You lost the game. Try again next time" : "You won the game! Good job");
 }
 
-playGame();
+const buttons = document.getElementById("buttons");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+
+
+buttons.addEventListener("click", function(e) { console.log(e.target.id) })
