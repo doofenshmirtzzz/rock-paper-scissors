@@ -1,6 +1,22 @@
+@font-face {
+  font-family: 'Monaspace Neon NF';
+  src: url("fonts/MonaspaceNeonNF-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: 'Monaspace Neon NF';
+  font-weight: bold;
+  src: url("fonts/MonaspaceNeonNF-Bold.otf") format("opentype");
+}
+
 * {
   background-color: #282828;
-  color: #fbf1c7;
+  color: #ebdbb2;
+  
+  font-family: 'Monaspace Neon NF', 'Consolas', monospace;
+}
+
+::selection {
+  background-color: #665c54;
 }
 
 body {
@@ -9,6 +25,42 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+button {
+  border: 1px solid #ebdbb2;
+  padding: 6px 18px;
+
+  transition: background-color 0.08s cubic-bezier(.17,.67,.83,.67),
+              color 0.08s cubic-bezier(.17,.67,.83,.67),
+              border-color 0.08s cubic-bezier(.17,.67,.83,.67);
+}
+
+button:hover {
+  background-color: #3c3836;
+  color: #fbf1c7;
+  border-color: #fbf1c7;
+}
+
+button:active {
+  background-color: #282828;
+  color: #a89984;
+  border-color: #a89984;
+}
+
+.blink {
+  animation: blink-animation 1s steps(2, start) infinite;
+  -webkit-animation: blink-animation 1s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
 
 .container {
