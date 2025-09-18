@@ -101,17 +101,17 @@ const buttons = document.getElementById("buttons");
 
 buttons.addEventListener("click", (e) => playRound(e))
 
-while (true) { // every loop is a new game
+// while (true) { // every loop is a new game
   
   // reset DOM scores and stuff
 
-  while (true) {
-    var computerScore = 0,
-        humanScore = 0,
-        result;
+  // while (true) {
+  //   var computerScore = 0,
+  //       humanScore = 0,
+  //       result;
 
-    while (computerScore < 5 && humanScore < 5) {
+  //   while (computerScore < 5 && humanScore < 5) {
 
-    }
-  }
-}
+  //   }
+  // }
+// }
