@@ -26,23 +26,23 @@ humanScore and computerScore init with 0, increment after win
 
 
 function getComputerChoice() {
-  return Math.floor(Math.random() * 3); // 0, 1 or 2
-}
+  // 0, 1 or 2
+  const choice = Math.floor(Math.random() * 3); 
 
-function getHumanChoice(event) {
-  switch (event.target.id) {
-    case "rock":
-      return 0
-    case "paper":
-      return 1
-    case "scissors":
-      return 2
-    default:
-      break;
+  switch (choice) {
+    case 0:
+      return "rock";
+    case 1:
+      return "paper";
+    case 2:
+      return "scissors";
   }
 }
 
-function playRound(computerChoice, humanChoice) {
+function playRound(element) {
+  const humanChoice = element.target.id,
+        computerChoice = getComputerChoice();
+
   if (computerChoice === humanChoice) {
     console.log(`Tie! You both chose ${translateChoice(computerChoice)}`);
     return 0; // draw
@@ -70,17 +70,6 @@ function playRound(computerChoice, humanChoice) {
       console.log("You lose. Scissors beat paper")
       return 1; // computer wins
     }
-  }
-}
-
-function translateChoice(choice) {
-  switch (choice) {
-    case 0:
-      return "rock";
-    case 1:
-      return "paper";
-    case 2:
-      return "scissors";
   }
 }
 
@@ -115,4 +104,16 @@ const scissors = document.getElementById("scissors");
 
 
 
-buttons.addEventListener("click", function(e) { console.log(e.target.id) })
+buttons.addEventListener("click", playRound(computerChoice, e))
+
+while (true) { // every loop is a game
+  // reset DOM scores and stuff
+
+  var computerScore = 0,
+      humanScore = 0,
+      result;
+
+  while (computerScore < 5 && humanScore < 5) {
+
+  }
+}
