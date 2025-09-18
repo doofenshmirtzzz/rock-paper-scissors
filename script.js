@@ -43,6 +43,16 @@ function playRound(element) {
   const humanChoice = element.target.id,
         computerChoice = getComputerChoice();
 
+
+// TODO: make it change the global score variable;
+// synchronize score variable with div somehow 
+// (idk either change the div content every time the score changes
+// or make it show the variable, preferable the latter if possible);
+// track scores and reset (+ show the win message) when either is 5;
+// probably remove the game thing at all, somehow check everything inline (idk???);
+// do it all without inline loops (idk, check if score===5 on its increment?)
+// clean this shit up and maybe refactor so it's not that ugly;
+
   if (computerChoice === humanChoice) {
     console.log(`Tie! You both chose ${translateChoice(computerChoice)}`);
     return 0; // draw
@@ -100,6 +110,8 @@ function playGame() {
 const buttons = document.getElementById("buttons");
 
 buttons.addEventListener("click", (e) => playRound(e))
+
+
 
 // while (true) { // every loop is a new game
   
