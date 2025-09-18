@@ -98,15 +98,10 @@ function playGame() {
 }
 
 const buttons = document.getElementById("buttons");
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
 
+buttons.addEventListener("click", playRound(e))
 
-
-buttons.addEventListener("click", playRound(computerChoice, e))
-
-while (true) { // every loop is a game
+while (true) { // every loop is a new game
   // reset DOM scores and stuff
 
   var computerScore = 0,
