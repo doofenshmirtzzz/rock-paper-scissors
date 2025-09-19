@@ -73,7 +73,7 @@ function playRound(element) {
 }
 
 let humanScore = 0, 
-    computerScore = 0;
+    computerScore = 0,
     won = false;
 
 const buttons = document.getElementById('buttons');
