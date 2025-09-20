@@ -71,3 +71,38 @@ button:active {
   flex-direction: column;
   align-items: center;
 }
+
+.gestures {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: 400px;
+  width: 800px;
+}
+
+.human-container,
+.computer-container {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-title {
+  font-size: 18px;
+}
+
+.score {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.gesture {
+  height: 300px;
+  width: 300px;
+  flex-shrink: 0;
+  margin: 0;
+  border: 4px dashed #202020;
+}
