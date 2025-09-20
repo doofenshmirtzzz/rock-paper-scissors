@@ -82,9 +82,9 @@ buttons.addEventListener('click', (e) => playRound(e))
 
 
 // new TODO: complete toggleWinMessage()
-// add results div and the winner span
-// add scores div and functions to change it
-// add needed js comments
+// add the winner span
+// add function(s) to change score
+// add js comments
 // make ASCII art for displaying the user and computer choice
 // somehow highlight the win (effect on the score increment, or overlay animation idk)
 
