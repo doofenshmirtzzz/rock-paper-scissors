@@ -297,18 +297,8 @@ const buttons = document.getElementById('buttons'),
 buttons.addEventListener('click', (e) => playRound(e))
 
 
-// new TODO: complete toggleWinMessage()
-// add the winner span
-// add function(s) to change score
+// TODO: complete toggleWinMessage()
+// add the winner message
 // add js comments
-// make ASCII art for displaying the user and computer choice
+// make ASCII animation
 // somehow highlight the win (effect on the score increment, or overlay animation idk)
-
-// TODO: make it change the global score variable;
-// synchronize score variable with div somehow 
-// (idk either change the div content every time the score changes
-// or make it show the variable, preferable the latter if possible);
-// track scores and reset (+ show the win message) when either is 5;
-// probably remove the game thing at all, somehow check everything inline (idk???);
-// do it all without inline loops (idk, check if score===5 on its increment?)
-// clean this shit up and maybe refactor so it's not that ugly;
