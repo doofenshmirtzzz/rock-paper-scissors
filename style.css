@@ -115,3 +115,5 @@ button:active {
   margin: 0;
   border: 4px dashed #202020;
 }
+
+#computer-gesture { text-align: end; }
