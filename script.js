@@ -232,6 +232,11 @@ function showGesture(actor, gesture) {
   }
 }
 
+function updateScore() {
+  humanScoreElement.textContent = humanScore;
+  computerScoreElement.textContent = computerScore;
+}
+
 function decideWinner(humanChoice, computerChoice) {
   if (computerChoice === humanChoice) {
     return;
@@ -271,6 +276,8 @@ function playRound(element) {
 
   decideWinner(humanChoice, computerChoice);
 
+  updateScore();
+
   checkIfWon();
 
   // disable the win message on the next button press after the actual win
@@ -283,7 +290,9 @@ let humanScore = 0,
 
 const buttons = document.getElementById('buttons'),
       humanGesture = document.getElementById('human-gesture'),
-      computerGesture = document.getElementById('computer-gesture');
+      computerGesture = document.getElementById('computer-gesture'),
+      humanScoreElement = document.getElementById('human-score'),
+      computerScoreElement = document.getElementById('computer-score');
 
 buttons.addEventListener('click', (e) => playRound(e))
 
