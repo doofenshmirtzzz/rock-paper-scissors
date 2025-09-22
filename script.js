@@ -30,6 +30,15 @@ function checkIfWon() {
   }
 }
 
+function animateGesture(element, gesture) {
+  let i = gesture.length - 1;
+  setInterval(() => {
+    if (i < 0) return;
+    element.textContent = gesture[i];
+    i--;
+  }, 5);
+}
+
 function showGesture(actor, gesture) {
   // rock: 52 char
   // others: 70 char
@@ -134,6 +143,7 @@ function showGesture(actor, gesture) {
   } else if (actor === 'human') {
       switch (gesture) {
       case 'rock':
+        /*
         humanGesture.textContent = `                      =*##*+                        
                   :###      =*#*                    
                .##=             #*+                 
@@ -162,6 +172,8 @@ function showGesture(actor, gesture) {
               ***+                  =#+             
                   +#*#*=        .+##=               
                          +####*=.                   `
+        */
+        animateGesture(humanGesture, HUMAN_ROCK);
         break;
       case 'paper':
         humanGesture.textContent = `                                     +*#                              
