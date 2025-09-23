@@ -314,3 +314,13 @@ buttons.addEventListener('click', (e) => playRound(e))
 // add js comments
 // make ASCII animation
 // somehow highlight the win (effect on the score increment, or overlay animation idk)
+
+/*
+new approach for the animation:
+
+make the scramble transition (possibly also scrambling away the last image)
+use a non-empty-space character for background for good visual effect
+use small charset, probably this: " .:-=+*#%@" (maybe no space char)
+manipulate string and change textContent each step
+add the placeholder image at the start (or just after the first page load)
+*/
