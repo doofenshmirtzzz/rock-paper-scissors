@@ -126,3 +126,7 @@ button:active {
 }
 
 #computer-gesture { text-align: end; }
+
+.hidden {
+  visibility: hidden;
+}

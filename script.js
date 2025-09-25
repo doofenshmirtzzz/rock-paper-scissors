@@ -14,19 +14,22 @@ function getComputerChoice() {
   }
 }
 
-function toggleWinMessage(result) {
-  if (result) {
-    // change the winner and toggle result div
-  }
+function changeWinMessage(element, winner) {
+  element.textContent = winner ? 'You lost :(' : "You won";
+}
+
+function toggleElement(element) {
+  element.classList.toggle('hidden');
 }
 
 function checkIfWon() {
   if (computerScore === 5 || humanScore === 5) {
+    changeWinMessage(results, computerScore > humanScore)
+    toggleElement(results);
+    won = true;
+
     computerScore = 0;
     humanScore = 0;
-
-    toggleWinMessage(computerScore > humanScore);
-    won = true;
   }
 }
 
@@ -285,15 +288,18 @@ function playRound(element) {
 
   showGesture('human', humanChoice);
   showGesture('computer', computerChoice);
-
+  
   decideWinner(humanChoice, computerChoice);
-
+  
   updateScore();
+  
+  // disable the win message on the next button press after the actual win
+  if (won) {
+    toggleElement(results);
+    won = false;
+  }
 
   checkIfWon();
-
-  // disable the win message on the next button press after the actual win
-  if (won) toggleWinMessage();
 }
 
 let humanScore = 0, 
@@ -304,7 +310,8 @@ const buttons = document.getElementById('buttons'),
       humanGesture = document.getElementById('human-gesture'),
       computerGesture = document.getElementById('computer-gesture'),
       humanScoreElement = document.getElementById('human-score'),
-      computerScoreElement = document.getElementById('computer-score');
+      computerScoreElement = document.getElementById('computer-score'),
+      results = document.getElementById('results');
 
 buttons.addEventListener('click', (e) => playRound(e))
 
@@ -323,4 +330,8 @@ use a non-empty-space character for background for good visual effect
 use small charset, probably this: " .:-=+*#%@" (maybe no space char)
 manipulate string and change textContent each step
 add the placeholder image at the start (or just after the first page load)
+*/
+
+/*
+fix the broken result toggle
 */
