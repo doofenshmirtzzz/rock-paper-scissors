@@ -331,7 +331,3 @@ use small charset, probably this: " .:-=+*#%@" (maybe no space char)
 manipulate string and change textContent each step
 add the placeholder image at the start (or just after the first page load)
 */
-
-/*
-fix the broken result toggle
-*/
